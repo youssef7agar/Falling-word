@@ -1,5 +1,6 @@
 package com.example.fallingword.di.module
 
+import com.example.fallingword.common.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -32,7 +33,7 @@ class AppModule {
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
-            .baseUrl("https://gist.githubusercontent.com/")
+            .baseUrl(BASE_URL)
             .build()
     }
 }
