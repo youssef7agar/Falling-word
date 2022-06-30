@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    <TextView
+        android:id="@+id/timerTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pixels_font"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@id/highScoreTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="00:05" />
+
+    <TextView
+        android:id="@+id/highScoreTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pixels_font"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/timerTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/timerTextView"
+        app:layout_constraintTop_toTopOf="@id/timerTextView"
+        tools:text="@string/gaming_high_score" />
+
+    <TextView
+        android:id="@+id/currentScoreTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pixels_font"
+        android:gravity="center"
+        android:layout_margin="8dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/timerTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timerTextView"
+        tools:text="@string/current_score" />
+
+    <TextView
+        android:id="@+id/englishWordTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/pixels_font"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        app:layout_constraintTop_toBottomOf="@id/currentScoreTextView"
+        tools:text="Hello" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/spanishWordLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="4dp"
+        app:layout_constraintTop_toBottomOf="@id/englishWordTextView"
+        app:layout_constraintBottom_toTopOf="@id/correctButton">
+
+        <TextView
+            android:id="@+id/spanishWordTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/pixels_font"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            tools:text="Hola" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/incorrectButton"
+        android:layout_width="0dp"
+        android:layout_height="76dp"
+        android:layout_marginHorizontal="4dp"
+        android:backgroundTint="@color/gray"
+        android:text="@string/incorrect"
+        android:textColor="#FF0000"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/correctButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/correctButton"
+        android:layout_width="0dp"
+        android:layout_height="76dp"
+        android:layout_marginHorizontal="4dp"
+        android:backgroundTint="@color/gray"
+        android:text="@string/correct"
+        android:textColor="#339933"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/incorrectButton" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/gamingGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="timerTextView, englishWordTextView, spanishWordLayout, incorrectButton, correctButton, highScoreTextView, currentScoreTextView"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foregroundTint="@color/black"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lostTitleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pixels_font"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/lostHighScoreTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/wrong_choice_message" />
+
+    <TextView
+        android:id="@+id/lostHighScoreTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pixels_font"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/playAgainButton"
+        app:layout_constraintTop_toBottomOf="@id/lostTitleTextView"
+        tools:text="@string/high_score" />
+
+    <Button
+        android:id="@+id/playAgainButton"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:backgroundTint="@color/gray"
+        android:fontFamily="@font/pixels_font"
+        android:text="@string/play_again"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/lostGroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:constraint_referenced_ids="lostTitleTextView, lostHighScoreTextView, playAgainButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

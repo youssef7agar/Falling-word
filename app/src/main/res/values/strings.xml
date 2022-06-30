@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Falling word</string>
+    <string name="welcome_nto_our_game">WELCOME\nTO OUR GAME</string>
+    <string name="high_score">YOUR HIGH SCORE IS (%S)</string>
+    <string name="start">START</string>
+    <string name="incorrect">INCORRECT</string>
+    <string name="correct">CORRECT</string>
+    <string name="wrong_choice_message">You chose wrongly :(</string>
+    <string name="play_again">PLAY AGAIN</string>
+    <string name="gaming_high_score">HIGH SCORE : %S</string>
+    <string name="current_score">CURRENT SCORE : %S</string>
+    <string name="time_up">Your time has ended :(</string>
+    <string name="time">00:0%S</string>
+</resources>
